@@ -2,21 +2,15 @@ export class Advertisement {
 
     constructor(
         public _id?: string,
-        public item?: string,
-        public qty?: number,
-        public tags?: string[],
-        public status?: string,
-        public size?: Size
-    ){}
-
-}
-
-export class Size {
-
-    constructor(
-        public h?: number,
-        public w?: number,
-        public uom?: string
+        public ProductName?: string,
+        public Description?: number,
+        public Brand?: string[],
+        public Price?: string,
+        public Category?: string,
+        public Condition?:string,
+        public DateEnabled?:Date,
+        public Lifetime?:Date,
+        public Imagelink?:string
     ){}
 
 }

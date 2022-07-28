@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
-import { Advertisement, Size } from "../../models/advertisement.model";
+import { Advertisement } from "../../models/advertisement.model";
 import { AdvertisementRepository } from "../../models/advertisement.repository";
 
 @Component({
@@ -32,9 +32,7 @@ export class add_editComponent {
         } 
 
         // Add
-        else {
-            this.item.size = new Size();
-        }        
+               
     }
 
     save(form: NgForm) {

@@ -5,7 +5,7 @@ import { AdvertisementRepository } from "../../models/advertisement.repository";
 
 @Component({
   selector: 'app-advertisement',
-  templateUrl: './advertisement.component.html'
+  templateUrl: 'advertisement.component.html'
 })
 
 export class advertisementComponent {

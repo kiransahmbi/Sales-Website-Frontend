@@ -11,6 +11,7 @@
     <div class="album">
         <div class="container">
             <div class="row">
+                <tr *ngFor="let item of AdvertisementList">
               <!--   <% for(let i = 0; i < AdvertisementList.length; i++) { %> -->
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
@@ -21,7 +22,7 @@
                                 <table class="table table-borderless">
                                     <tr>
                                         <td class="h6">Description:</td>
-                                        <td>AdvertisementList.Description</td>
+                                        <td>{{item.Description}}</td>
                                     </tr>
                                     <tr>
                                         <td class="h6">Price:</td>
@@ -46,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-               <!--  <% } %> -->
+               <!--  <% } %> --></tr>
             </div>
         </div>
     </div>
