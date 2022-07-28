@@ -30,12 +30,8 @@ export class add_editComponent {
         if (this.editing) {
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         } 
-<<<<<<< Updated upstream
 
-        // Add
-               
-=======
->>>>>>> Stashed changes
+        // Add            
     }
 
     save(form: NgForm) {
