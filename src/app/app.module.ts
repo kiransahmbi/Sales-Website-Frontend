@@ -14,6 +14,10 @@ import { AdvertisementModule } from "./components/advertisement/advertisement.mo
 import { AuthModule } from './components/auth/auth.module';
 import { AuthGuard } from "./components/auth/auth.guard";
 import { PartialsModule } from './components/partials/partials.module';
+import { HeaderComponent } from './components/partials/header.component';
+import { FooterComponent } from './components/partials/footer.component';
+import { NavbarComponent } from './components/partials/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -25,14 +29,18 @@ import { PartialsModule } from './components/partials/partials.module';
     AdvertisementModule,
     AuthModule,
     PartialsModule,
+    RouterModule,
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "advertisement/advertisement", component: advertisementComponent },
+      { path: "partials/partials", component: HeaderComponent },
+      { path: "partials/partials", component: FooterComponent },
+      { path: "partials/partials", component: NavbarComponent  },
       { path: "advertisement/:mode", component: add_editComponent, canActivate: [AuthGuard]},
-      { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
+     { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
-      { path: "**", redirectTo: "" }
+     { path: "**", redirectTo: "" }
     ])
   ],
   providers: [

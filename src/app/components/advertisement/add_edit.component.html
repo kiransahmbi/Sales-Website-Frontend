@@ -6,29 +6,29 @@
     <div class="row">
         <div class="offset-md-2 col-md-8">
             <h1 class="page-title my-4 text-center">title</h1>
-
-            <form class="form" method="POST">
-                <input type="hidden" name="id" value="item._id">
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+           <!-- <form class="form" method="POST"> -->
+                <input type="hidden" name="id" [(ngModel)]="item._id">
                 
                 <label for="productNameTextField">Product Name</label>
                 <input type="text" class="form-control"
                     id="productNameTextField"
                     name="ProductName" 
-                    value="item.ProductName"
+                    [(ngModel)]="item.ProductName"
                     required>
                 <br>
                 <label for="brandTextField">Brand</label>
                 <input type="text" class="form-control"
                     id="brandTextField"
                     name="Brand" 
-                    value="item.Brand"
+                    [(ngModel)]="item.Brand"
                     required>
                 <br>
                 <label for="descriptionTextField">Description</label>
                 <input type="text" class="form-control"
                     id="descriptionTextField"
                     name="Description" 
-                    value="item.Description"
+                    [(ngModel)]="item.Description"
                     required>
                 <br>
                 <label for="priceTextField">Price</label>
@@ -36,7 +36,7 @@
                     id="priceTextField"
                     placeholder="999.99"
                     name="Price" 
-                    value="item.Price"
+                    [(ngModel)]="item.Price"
                     required>
                 <br>
                 <label for="categoryTextField">Category</label>
@@ -45,7 +45,7 @@
                     var options = [ "Automotive", "Books", "Clothing, Shoes & Jewelry", "Electronics", "Furniture", "Musical Instruments"];
                     for ( var i = 0; i < options.length; i++ )
                     {
-                        %><option value="<%= options[i] %>" <%= item.Category == options[i] ? 'selected' : '' %>><%= options[i] %></option><%
+                        %><option [(ngModel)]="<%= options[i] %>" <%= item.Category == options[i] ? 'selected' : '' %>><%= options[i] %></option><%
                     }
                     %> -->
                 </select>
@@ -56,7 +56,7 @@
                     var options = [ "Like New", "Minor Damage", "Noticeable Damage", "Major Damage", "Needs Repair"];
                     for ( var i = 0; i < options.length; i++ )
                     {  
-                        %><option value="<%= options[i] %>" <%= item.Condition == options[i] ? 'selected' : '' %>><%= options[i] %></option><%
+                        %><option [(ngModel)]="<%= options[i] %>" <%= item.Condition == options[i] ? 'selected' : '' %>><%= options[i] %></option><%
                     }
                     %>-->
                 </select>
@@ -65,20 +65,20 @@
                 <input type="date" class="form-control"
                     id="dateEnabledTextField"
                     name="DateEnabled" 
-                    value="item.DateEnabled">
+                    [(ngModel)]="item.DateEnabled">
                 <br>
                 <label for="lifeTimeTextField">Advertisement Expiry Date</label>
                 <input type="date" class="form-control"
                     id="lifetimeTextField"
                     name="Lifetime" 
-                    value="item.Lifetime">
+                    [(ngModel)]="item.Lifetime">
                 <br>
                 <label for="brandTextField">Enter Link of the Image</label>
                 <input type="text" class="form-control"
                     id="Imagelinktextfield"
                     placeholder="Enter Image Link"
                     name="ImageLink" 
-                    value="item.ImageLink"
+                    [(ngModel)]="item.Imagelink"
                     >
     
                 <button class="btn btn-primary my-4" type="submit">

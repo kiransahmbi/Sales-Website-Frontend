@@ -26,21 +26,24 @@
                                     </tr>
                                     <tr>
                                         <td class="h6">Price:</td>
-                                        <td>AdvertisementList.Price</td>
+                                        <td>{{item.Price}}</td>
                                     </tr>
                                     <tr>
                                         <td class="h6">Condition:</td>
-                                        <td>AdvertisementList.Condition</td>
+                                        <td>{{ item.Condition}}</td>
                                     </tr>
                                 </table>
                          <!--  </p> -->  
                         </div>
                         <div class="card-footer text-muted">
                             <div class="d-flex align-items-center btn-group">
-                                <a href="/advertisement/edit/AdvertisementList._id" class="btn btn-sm">
+                               <!-- <a href="/advertisement/edit/AdvertisementList._id" class="btn btn-sm"> -->
+                             <a><button [routerLink]="['/advertisement/edit/',item._id]" class="btn btn-sm"></button>
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <a href="/advertisement/delete/AdvertisementList._id" class="btn btn-sm">
+                                <!--This need to be changed into new link-->
+                              <!--   <a href="/advertisement/delete/AdvertisementList._id" class="btn btn-sm">-->
+                                <a><button [routerLink]="['/advertisement/delete/',item._id]" class="btn btn-sm"></button>
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
                             </div>

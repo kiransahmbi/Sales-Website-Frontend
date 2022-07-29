@@ -11,24 +11,27 @@
       <div class="collapse navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link anchor" href="/aboutus">About Us</a>
+                <a class="nav-link anchor" routerLink="/aboutus">About Us</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link anchor" href="/advertisement/list">Advertisements</a>
+                  <a class="nav-link anchor" routerLink="/advertisement/advertisement">Advertisements</a>
               </li>
               <li class="nav-item">
               
-                    <a class="nav-link active" href="/users/signup">
+                    
                 
-                    <a class="nav-link" href="/users/signup">
-                           
+                    <a *ngIf="auth.username == null" class="nav-link" routerLink="/auth/signup">                   
                     <i class="fas fa-user"></i> Register </a>
-                </a>            
+                    <a *ngIf="auth.username != null" class="nav-link" routerLink="/auth/signup" style="display:none">                   
+                        <i class="fas fa-user"></i> Register </a>
+                          
               <li class="nav-item">  
                 
-                  <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')">Sign Out</a>
+              <!--    <a class="nav-link" routerLink="/users/signout" onclick="return confirm('Are you sure?')">Sign Out</a> -->
                
-                  <a class="nav-link" href="/users/signin">Sign In</a>
+               <!--   <a class="nav-link" routerLink="/users/signin">Sign In</a>    -->
+                  <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()">Sign Out ({{ auth.username }})</a>
+                  <a *ngIf="auth.username == null" class="nav-link" routerLink="/auth/signin">Signin</a>
                           
               </li> 
 

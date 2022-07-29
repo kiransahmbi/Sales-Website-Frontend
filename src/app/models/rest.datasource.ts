@@ -7,8 +7,8 @@ import { Advertisement } from "./advertisement.model";
 import { User } from "./user.model";
 import { ResponseModel } from "./response.model";
 
-// const PROTOCOL = "http";
-// const PORT = 3000;
+ const PROTOCOL = "http";
+ const PORT = 3000;
 
 @Injectable()
 export class RestDataSource {

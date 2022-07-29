@@ -5,18 +5,19 @@
     <div class="row">
 
         <div class="offset-md-3 col-md-3">
-            <h1>title</h1>
+            <h1>Sign In</h1>
             
-                <div class="flash"></div>
-            
-            <form action="/users/signin" method="post">
+                <div class="flash"  *ngIf="message != null">
+                    {{message}}></div>
+                <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+           <!-- <form action="/users/signin" method="post"> -->
                 <div class="form-group">
                     <label>Username:</label>
-                    <input type="text" name="username" class="form-control" />
+                    <input type="text" name="username" [(ngModel)]="username" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Password:</label>
-                    <input type="password" name="password" class="form-control"/>
+                    <input type="password" name="password" [(ngModel)]="password" class="form-control"/>
                 </div>
                 <br>
                 <div class="form-group">
@@ -24,7 +25,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <a href="/users/signup" style="text-decoration: none">                
+                    <a routerLink="/auth/signup" style="text-decoration: none">                
                         <i class="fas fa-user-plus"></i> 
                         Signup
                     </a>
