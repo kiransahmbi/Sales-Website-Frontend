@@ -22,6 +22,7 @@ export class AdvertisementRepository {
         return (this.Advertisement.find(item => item._id === id)!);
     }
 
+    //This also works to push a new advertisement
     async saveAdvertisement(item: Advertisement) {
 
         // If it does not have id, then create a new item.

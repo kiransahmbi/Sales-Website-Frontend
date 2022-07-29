@@ -39,7 +39,7 @@ import { NavbarComponent } from './components/partials/navbar.component';
       { path: "partials/partials", component: HeaderComponent },
       { path: "partials/partials", component: FooterComponent },
       { path: "partials/partials", component: NavbarComponent  },
-      { path: "advertisement/:mode", component: add_editComponent, canActivate: [AuthGuard]},
+      { path: "advertisement/:mode", component: add_editComponent}, //Reinoldo Caceres removed canActivate: [AuthGuard] to test the add_edit route.
      { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },

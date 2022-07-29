@@ -5,7 +5,8 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-2 col-md-8">
-            <h1 class="page-title my-4 text-center">title</h1>
+            <!-- <h1 class="page-title my-4 text-center">title</h1> Modified by Reinoldo -->
+            <h1 class="page-title my-4 text-center">{{editing ? "Edit:" : "Add a new"}} Item</h1>
             <form novalidate #form="ngForm" (ngSubmit)="save(form)">
            <!-- <form class="form" method="POST"> -->
                 <input type="hidden" name="id" [(ngModel)]="item._id">
@@ -40,26 +41,24 @@
                     required>
                 <br>
                 <label for="categoryTextField">Category</label>
-                <select id="categoryTextField" class="form-control" name="Category">
-                    <!-- <%
-                    var options = [ "Automotive", "Books", "Clothing, Shoes & Jewelry", "Electronics", "Furniture", "Musical Instruments"];
-                    for ( var i = 0; i < options.length; i++ )
-                    {
-                        %><option [(ngModel)]="<%= options[i] %>" <%= item.Category == options[i] ? 'selected' : '' %>><%= options[i] %></option><%
-                    }
-                    %> -->
+
+
+                <select id="categoryTextField" class="form-control" [(ngModel)]="item.Category">
+                      <option
+                        *ngFor="let item of categories"
+                      >{{ item.name }}</option>
                 </select>
+
+
                 <br>
                 <label for="conditionTextField">Condition</label>
-                <select id="conditionTextField" class="form-control" name="Condition">
-                   <!--  <%
-                    var options = [ "Like New", "Minor Damage", "Noticeable Damage", "Major Damage", "Needs Repair"];
-                    for ( var i = 0; i < options.length; i++ )
-                    {  
-                        %><option [(ngModel)]="<%= options[i] %>" <%= item.Condition == options[i] ? 'selected' : '' %>><%= options[i] %></option><%
-                    }
-                    %>-->
-                </select>
+                <select id="conditionTextField" class="form-control" [(ngModel)]="item.Condition">
+                    <option
+                      *ngFor="let item of conditions"
+                    >{{ item.name }}</option>
+              </select>
+
+
                 <br>
                 <label for="dateEnabledTextField">Advertisement Start Date</label>
                 <input type="date" class="form-control"
@@ -86,7 +85,7 @@
                     Submit
                 </button>
                 
-                <a href="/advertisement/list" class="btn btn-light">
+                <a routerLink="/advertisement/list" class="btn btn-light">
                     <i class="fas fa-undo"></i> 
                     Cancel
                 </a>
