@@ -6,9 +6,10 @@ import { HttpHeaders } from '@angular/common/http';
 import { Advertisement } from "./advertisement.model";
 import { User } from "./user.model";
 import { ResponseModel } from "./response.model";
+import {environment} from "src/environments/environment"
 
- const PROTOCOL = "http";
- const PORT = 3000;
+ //const PROTOCOL = "http";
+ //const PORT = 3000;
 
 @Injectable()
 export class RestDataSource {
@@ -17,14 +18,14 @@ export class RestDataSource {
     auth_token: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = "http://localhost:3000/";
+        this.baseUrl = environment.apiurl; //"http://localhost:3000/";
         console.log(this.baseUrl);
         // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
 
     // Advertisement
     getAdvertisementList(): Observable<Advertisement[]> {
-        return this.http.get<Advertisement[]>(this.baseUrl + "Advertisement/advertisement");
+        return this.http.get<Advertisement[]>(this.baseUrl + "advertisement/list");
     }
 
     insertAdvertisement(item: Advertisement): Observable<Advertisement> {
