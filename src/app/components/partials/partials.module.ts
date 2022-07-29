@@ -4,16 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
 import { HeaderComponent } from './header.component';
 import { FooterComponent } from './footer.component';
+import { NavbarComponent } from './navbar.component';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, RouterModule],
     declarations: [
-        HeaderComponent,
+        HeaderComponent, NavbarComponent,
         FooterComponent
     ],
     exports: [
         HeaderComponent, 
-        FooterComponent
+        FooterComponent, NavbarComponent
     ]
 })
   
