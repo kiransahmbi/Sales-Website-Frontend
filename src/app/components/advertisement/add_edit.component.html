@@ -9,28 +9,28 @@
             <h1 class="page-title my-4 text-center">{{editing ? "Edit:" : "Add a new"}} Item</h1>
             <form novalidate #form="ngForm" (ngSubmit)="save(form)">
            <!-- <form class="form" method="POST"> -->
-                <input type="hidden" name="id" [(ngModel)]="item._id">
+                <input type="hidden" name="id" [(ngModel)]="item._id" [ngModelOptions]="{standalone: true}">
                 
                 <label for="productNameTextField">Product Name</label>
                 <input type="text" class="form-control"
                     id="productNameTextField"
                     name="ProductName" 
                     [(ngModel)]="item.ProductName"
-                    required>
+                    required [ngModelOptions]="{standalone: true}">
                 <br>
                 <label for="brandTextField">Brand</label>
                 <input type="text" class="form-control"
                     id="brandTextField"
                     name="Brand" 
                     [(ngModel)]="item.Brand"
-                    required>
+                    required >
                 <br>
                 <label for="descriptionTextField">Description</label>
                 <input type="text" class="form-control"
                     id="descriptionTextField"
                     name="Description" 
                     [(ngModel)]="item.Description"
-                    required>
+                    required [ngModelOptions]="{standalone: true}">
                 <br>
                 <label for="priceTextField">Price</label>
                 <input type="number" class="form-control"
@@ -38,12 +38,12 @@
                     placeholder="999.99"
                     name="Price" 
                     [(ngModel)]="item.Price"
-                    required>
+                    required [ngModelOptions]="{standalone: true}">
                 <br>
                 <label for="categoryTextField">Category</label>
 
 
-                <select id="categoryTextField" class="form-control" [(ngModel)]="item.Category">
+                <select id="categoryTextField" class="form-control" [(ngModel)]="item.Category" [ngModelOptions]="{standalone: true}">
                       <option
                         *ngFor="let item of categories"
                       >{{ item.name }}</option>
@@ -52,7 +52,7 @@
 
                 <br>
                 <label for="conditionTextField">Condition</label>
-                <select id="conditionTextField" class="form-control" [(ngModel)]="item.Condition">
+                <select id="conditionTextField" class="form-control" [(ngModel)]="item.Condition" [ngModelOptions]="{standalone: true}">
                     <option
                       *ngFor="let item of conditions"
                     >{{ item.name }}</option>
@@ -64,13 +64,13 @@
                 <input type="date" class="form-control"
                     id="dateEnabledTextField"
                     name="DateEnabled" 
-                    [(ngModel)]="item.DateEnabled">
+                    [(ngModel)]="item.DateEnabled" [ngModelOptions]="{standalone: true}">
                 <br>
                 <label for="lifeTimeTextField">Advertisement Expiry Date</label>
                 <input type="date" class="form-control"
                     id="lifetimeTextField"
                     name="Lifetime" 
-                    [(ngModel)]="item.Lifetime">
+                    [(ngModel)]="item.Lifetime" [ngModelOptions]="{standalone: true}">
                 <br>
                 <label for="brandTextField">Enter Link of the Image</label>
                 <input type="text" class="form-control"
@@ -78,7 +78,7 @@
                     placeholder="Enter Image Link"
                     name="ImageLink" 
                     [(ngModel)]="item.Imagelink"
-                    >
+                    [ngModelOptions]="{standalone: true}">
     
                 <button class="btn btn-primary my-4" type="submit">
                     <i class="fas fa-edit"></i> 
