@@ -7,8 +7,9 @@ import { SignInComponent } from './components/auth/signin.component';
 import { SignUpComponent } from './components/auth/signup.component';
 import { add_editComponent } from './components/advertisement/add_edit.component';
 import { advertisementComponent } from './components/advertisement/advertisement.component';
+import { detailsComponent } from './components/advertisement/details.component';
 import { IndexComponent } from './components/index.component';
-
+import { AboutusComponent } from './components/advertisement/aboutus.component';
 import { IndexModule } from './components/index.module';
 import { AdvertisementModule } from "./components/advertisement/advertisement.module";
 import { AuthModule } from './components/auth/auth.module';
@@ -32,6 +33,8 @@ import { NavbarComponent } from './components/partials/navbar.component';
     RouterModule,
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
+      { path: "aboutus", component: AboutusComponent },
+      { path: "advertisement/details", component: detailsComponent },
       { path: "advertisement/advertisement", component: advertisementComponent },
       { path: "partials/partials", component: HeaderComponent },
       { path: "partials/partials", component: FooterComponent },

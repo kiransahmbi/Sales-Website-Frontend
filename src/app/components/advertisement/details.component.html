@@ -4,9 +4,9 @@
 <!-- Content for the Details page -->
 <div class="container">
         <div class="row mx-5">
-            <h1 class="page-title my-4 text-center">title</h1>
+            <h1 class="page-title my-4 text-center">Details</h1>
             <div class="col-md-5">
-                <img class="" style="width: 60%;" src="Advertisement.ImageLink">
+                <img class="" style="width: 60%;" src="{{item.Imagelink}}">
             </div>
 
             <div class="col-md-7">
@@ -14,35 +14,33 @@
 
                     <tr>
                         <td>Product Name</td>
-                        <td>Advertisement.ProductName</td>
+                        <td>{{item.ProductName}}</td>
                     </tr>
                     <tr>
                         <td>Brand</td>
-                        <td>Advertisement.Brand</td>
+                        <td>{{item.Brand}}</td>
                     </tr>
                     <tr>
                         <td>Description</td>
-                        <td>Advertisement.Description</td>
+                        <td>{{item.Description}}</td>
                     </tr>
                     <tr>
                         <td>Price</td>
-                        <td>Advertisement.Price</td>
+                        <td>{{item.Price}}</td>
                     </tr>
                     <tr>
                         <td>Category</td>
-                        <td>Advertisement.Category</td>
+                        <td>{{item.Category}}</td>
                     </tr>
                     <tr>
                         <td>Condition</td>
-                        <td>Advertisement.Condition</td>
+                        <td>{{item.Condition}}</td>
                     </tr>
                     <tr>
-                        <td>Advertisement Start Date</td>
-                        <td>Advertisement.DateEnabled</td>
+                        <td>{{item.DateEnabled}}</td>
                     </tr>
                     <tr>
-                        <td>Advertisement Expiry Date</td>
-                        <td>Advertisement.Lifetime</td>
+                        <td>{{item.Lifetime}}</td>
                     </tr>
                 </table>
             </div>

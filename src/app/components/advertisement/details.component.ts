@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
+
 import { Advertisement } from "../../models/advertisement.model";
 import { AdvertisementRepository } from "../../models/advertisement.repository";
+import { Router, ActivatedRoute } from "@angular/router";
+
 
 @Component({
   selector: 'app-details',
@@ -9,15 +11,16 @@ import { AdvertisementRepository } from "../../models/advertisement.repository";
 })
 
 export class detailsComponent {
-    title = 'Details';
+    title:string = 'Add a new Item';
+    editing: boolean = false;
+    item: Advertisement = new Advertisement();
     constructor(private repository: AdvertisementRepository,
-        private router: Router) 
-    { }
-
-    get AdvertisementList(): Advertisement[] {
-        return this.repository.getAdvertisement();        
-    }
+        private router: Router,
+        activeRoute: ActivatedRoute) 
+{ 
 
 
+    this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
+}
     
 }
