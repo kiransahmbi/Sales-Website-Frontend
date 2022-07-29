@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Sanitizer } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Advertisement } from "../../models/advertisement.model";
@@ -10,6 +10,57 @@ import { AdvertisementRepository } from "../../models/advertisement.repository";
 })
 
 export class add_editComponent {
+
+    categories = [
+        {
+          id: 1,
+          name: 'Automotive'
+        },
+        {
+          id: 2,
+          name: 'Books'
+        },
+        {
+          id: 3,
+          name: 'Clothing, Shoes & Jewelry'
+        },
+        {
+          id: 4,
+          name: 'Electronics'
+        },
+        {
+          id: 5,
+          name: 'Furniture'
+        },
+        {
+          id: 6,
+          name: 'Musical Instruments'
+        },
+        
+      ];
+
+      conditions = [
+        {
+          id: 1,
+          name: 'Like New'
+        },
+        {
+          id: 2,
+          name: 'Minor Damage'
+        },
+        {
+          id: 3,
+          name: 'Noticeable Damage'
+        },
+        {
+          id: 4,
+          name: 'Major Damage'
+        },
+        {
+          id: 5,
+          name: 'Needs Repair'
+        }
+      ];
     
     title:string = 'Add a new Item';
     editing: boolean = false;
@@ -29,9 +80,13 @@ export class add_editComponent {
         // Edit
         if (this.editing) {
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
-        } 
+        }
 
-        // Add            
+        //Add
+        else{
+            this.item = new Advertisement();
+        }
+
     }
 
     save(form: NgForm) {
