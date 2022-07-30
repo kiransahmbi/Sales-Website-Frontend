@@ -82,21 +82,21 @@ export class add_editComponent {
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         }
 
-        //Add
-        else{
-            this.item = new Advertisement();
-        }
+        // //Add
+        // else{
+        //     this.item = new Advertisement();
+        // }
 
     }
 
     save(form: NgForm) {
         this.repository.saveAdvertisement(this.item);
-        this.router.navigateByUrl("Advertisement/list");                
+        this.router.navigateByUrl("/advertisement/list");                
     }
 
     private deleteItem(id: string){
         this.repository.deleteAdvertisement(id);
-        this.router.navigateByUrl("Advertisement/list");
+        this.router.navigateByUrl("/advertisement/list");
     }
     
 }
