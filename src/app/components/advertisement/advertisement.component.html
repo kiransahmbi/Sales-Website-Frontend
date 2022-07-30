@@ -12,11 +12,10 @@
         <div class="container">
             <div class="row">
                 <tr *ngFor="let item of AdvertisementList">
-              <!--   <% for(let i = 0; i < AdvertisementList.length; i++) { %> -->
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-center h5"><b>AdvertisementList.Brand</b>AdvertisementList.ProductName</div>
-                        <a href="/advertisement/details/AdvertisementList._id"><img class="card-img-top" src="AdvertisementList.ImageLin"></a>
+                        <div class="card-header text-center h5"><b>{{ item.Brand }}</b>{{ item.ProductName }} </div>
+                        <a href="/advertisement/details/AdvertisementList._id"><img class="card-img-top" src="{{ item.ImageLink }}"></a>
                         <div class="card-body">
                             <p class="card-text">
                                 <table class="table table-borderless">

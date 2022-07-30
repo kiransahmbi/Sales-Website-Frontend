@@ -12,7 +12,7 @@ import { AboutusComponent } from './aboutus.component';
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule, PartialsModule],
     declarations: [advertisementComponent, add_editComponent, detailsComponent, AboutusComponent ],
-    exports : [advertisementComponent, add_editComponent,detailsComponent, AboutusComponent]
+    exports : [advertisementComponent, add_editComponent, detailsComponent, AboutusComponent]
 })
 
 export class AdvertisementModule {}

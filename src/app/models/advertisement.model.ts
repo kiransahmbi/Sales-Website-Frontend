@@ -10,8 +10,8 @@ export class Advertisement {
         public Condition?:string,
         public DateEnabled?:Date,
         public Lifetime?:Date,
-        public Imagelink?:string,
-        public Owner?: string
+        public ImageLink?:string,
+        public owner?: string
     ){}
 
 }
