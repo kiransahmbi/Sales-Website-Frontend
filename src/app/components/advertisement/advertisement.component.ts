@@ -20,7 +20,7 @@ export class advertisementComponent {
 
     deleteMethod(id: string) {
         if(confirm("Are you sure do you want to delete?")) {
-            this.router.navigateByUrl("Advertisement/delete/"+id);
+            this.router.navigateByUrl("/advertisement/delete/"+id);
         }
     }
     

@@ -77,16 +77,18 @@
                     name="ImageLink" 
                     [(ngModel)]="item.ImageLink"
                     [ngModelOptions]="{standalone: true}">
-    
-                <button class="btn btn-primary my-4" type="submit">
-                    <i class="fas fa-edit"></i> 
-                    Submit
-                </button>
-                
-                <a routerLink="/advertisement/list" class="btn btn-light">
-                    <i class="fas fa-undo"></i> 
-                    Cancel
-                </a>
+
+                <div class="d-flex align-items-center btn-group">
+                    <button class="btn btn-light my-4" type="submit">
+                        <i class="fas fa-edit"></i> 
+                        Submit
+                    </button>
+                    
+                    <a routerLink="/advertisement/list" class="btn btn-light">
+                        <i class="fas fa-undo"></i> 
+                        Cancel
+                    </a>
+                </div>
 
             </form>
         </div>

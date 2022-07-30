@@ -77,6 +77,10 @@ export class add_editComponent {
             this.title = "Update Item";
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         }
+
+        if (activeRoute.snapshot.params["mode"] == "delete") {
+          this.deleteItem(activeRoute.snapshot.params["id"]);
+        }
     }
 
     save(form: NgForm) {
