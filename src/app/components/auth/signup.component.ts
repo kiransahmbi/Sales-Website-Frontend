@@ -11,7 +11,7 @@ import { User } from "../../models/user.model";
 export class SignUpComponent {
 
     public user: User = new User();
-    public confirmPassowrd: string;
+    public confirmPassword: string;
     public message: string;
 
     constructor(private router: Router,
@@ -20,7 +20,7 @@ export class SignUpComponent {
     signup(form: NgForm) {
         if (form.valid) {
             // Checks if the passwords match.
-            if(this.user.password == this.confirmPassowrd){
+            if(this.user.password == this.confirmPassword){
                 this.auth.signupUser(this.user)
                     .subscribe(response => {
                         console.log(response);
