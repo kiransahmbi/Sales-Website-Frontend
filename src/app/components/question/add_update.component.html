@@ -5,41 +5,40 @@
     <div class="row mx-5">
         <h1 class="page-title my-4 text-center">{{ title }}</h1>
         <!-- Content for the Details page -->
-        <form class="form" method="POST" action="/question/{{ action }}/{{ item._id }}/{{ advertisement }}">
-            <div>
+        <form class="form" #questionForm = "ngForm" novalidate (ngSubmit)="save(questionForm)">
                 
-                <input type="hidden" name="id" value="{{ item._id }}">
-                <input type="hidden" name="advertisementID" value="{{ advertisement }}">
+                <input type="hidden" name="id" [(ngModel)]="item._id">
+                <input type="hidden" name="AdvertisementID" [(ngModel)]="item.AdvertisementID">
 
                 <label for="inputQuestion">Question</label>
                 
                 <input *ngIf="title === 'Update Answer'" type="text" class="form-control"
                         id="inputQuestion"
                         name="Question" 
-                        value="{{ item.Question }}"
+                        value="{{ item.Question }}" [(ngModel)]="item.Question"
                         disabled>
 
 
                 <input *ngIf="title === 'Ask a Question'" type="text" class="form-control"
                     id="inputQuestion"
                     name="Question" 
-                    value="{{ item.Question }}">
+                    value="{{ item.Question }}" [(ngModel)]="item.Question">
 
 
                 <label *ngIf="title === 'Update Answer'" for="inputAnswer">Answer</label>
                 <input *ngIf="title === 'Update Answer'" type="text" class="form-control"
                     id="inputAnswer"
                     name="Answer" 
-                    value="{{ item.Answer }}"
+                    value="{{ item.Answer }}" [(ngModel)]="item.Answer"
                     required>
 
-            </div>
+
             <button class="btn btn-primary my-4" type="submit">
                 <i class="fas fa-edit"></i> 
                 Submit
             </button>
             
-            <a routerLink="/advertisement/details/{{ advertisement }}" class="btn btn-light">
+            <a routerLink="/advertisement/details/{{ item.AdvertisementID }}" class="btn btn-light">
                 <i class="fas fa-undo"></i> 
                 Cancel
             </a>

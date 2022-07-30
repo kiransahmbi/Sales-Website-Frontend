@@ -20,7 +20,7 @@ export class add_updateComponent {
                 private router: Router,
                 activeRoute: ActivatedRoute) 
     { 
-        this.advertisement = activeRoute.snapshot.params["advertisement"];
+        
 
         // Delete
         if (activeRoute.snapshot.params["mode"] == "delete") {
@@ -41,11 +41,13 @@ export class add_updateComponent {
             this.item = new QuestionAnswer();
         }
 
+        this.item.AdvertisementID = activeRoute.snapshot.params["advertisement"];
     }
 
     save(form: NgForm) {
+        console.log(this.item);
         this.repository.saveQuestionAnswer(this.item);
-        this.router.navigateByUrl("/advertisement/"+this.advertisement);                
+        //this.router.navigateByUrl("/advertisement/"+this.advertisement);                
     }
 
     private deleteItem(id: string){
