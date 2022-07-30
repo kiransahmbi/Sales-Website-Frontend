@@ -43,7 +43,7 @@ import { add_updateComponent } from './components/question/add_update.component'
       { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
       
       { path: "question/add/:advertisement", component: add_updateComponent},
-      { path: "question/:mode/:id/:advertisement", component: add_updateComponent},
+      { path: "question/:mode/:id/:advertisement", component: add_updateComponent, canActivate: [AuthGuard]},
 
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },

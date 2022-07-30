@@ -45,6 +45,7 @@ export class add_updateComponent {
     }
 
     save(form: NgForm) {
+        console.log(this.item);
         this.repository.saveQuestionAnswer(this.item);
         this.router.navigateByUrl("/advertisement/details/"+this.item.AdvertisementID);                
     }
