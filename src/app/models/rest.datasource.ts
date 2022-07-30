@@ -61,7 +61,7 @@ export class RestDataSource {
 
     // Questions & Answers
     getQuestionAnswerList(): Observable<QuestionAnswer[]> {
-        return this.http.get<QuestionAnswer[]>(this.baseUrl + "question/advertisement");
+        return this.http.get<QuestionAnswer[]>(this.baseUrl + "question");
     }
 
     insertQuestionAnswer(item: QuestionAnswer): Observable<Advertisement> {

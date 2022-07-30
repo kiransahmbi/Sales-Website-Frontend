@@ -14,8 +14,8 @@ export class QuestionAnswerRepository {
         });
     }
 
-    getQuestionAnswer(): QuestionAnswer[] {
-        return this.QuestionAnswer;
+    getQuestionAnswer(id: string): QuestionAnswer[] {
+        return (this.QuestionAnswer.filter(item => item.AdvertisementID === id));
     }
 
     getItem(id: string): QuestionAnswer {

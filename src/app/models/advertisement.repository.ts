@@ -19,7 +19,7 @@ export class AdvertisementRepository {
     }
 
     getItem(id: string): Advertisement {
-        return (this.Advertisement.find(item => item._id === id)!);
+        return (this.Advertisement.find(item => item._id === id));
     }
 
     //This also works to push a new advertisement

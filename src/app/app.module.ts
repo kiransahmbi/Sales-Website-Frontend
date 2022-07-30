@@ -17,9 +17,6 @@ import { QuestionAnswerModule } from "./components/question/questionAnswer.modul
 import { AuthModule } from './components/auth/auth.module';
 import { AuthGuard } from "./components/auth/auth.guard";
 import { PartialsModule } from './components/partials/partials.module';
-import { HeaderComponent } from './components/partials/header.component';
-import { FooterComponent } from './components/partials/footer.component';
-import { NavbarComponent } from './components/partials/navbar.component';
 import { add_updateComponent } from './components/question/add_update.component';
 
 
@@ -44,7 +41,8 @@ import { add_updateComponent } from './components/question/add_update.component'
       { path: "advertisement/:id", component: detailsComponent },
       { path: "advertisement/add", component: add_editComponent},
       { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
-
+      
+      { path: "question/add/:advertisement", component: add_updateComponent},
       { path: "question/:mode/:id/:advertisement", component: add_updateComponent},
 
       { path: "auth/signin", component: SignInComponent },

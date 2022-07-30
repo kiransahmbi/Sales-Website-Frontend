@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Advertisement } from "../../models/advertisement.model";
 import { AdvertisementRepository } from "../../models/advertisement.repository";
+import { QuestionAnswer } from "../../models/questionAnswer.model";
+import { QuestionAnswerRepository } from "../../models/questionAnswer.repository";
 import { Router, ActivatedRoute } from "@angular/router";
 
 
@@ -14,11 +16,21 @@ export class detailsComponent {
     title: string = 'Details';
     item: Advertisement;
     constructor(private repository: AdvertisementRepository,
+        private questionsRepository: QuestionAnswerRepository,
         private router: Router,
         activeRoute: ActivatedRoute) 
-{ 
+  { 
     this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
+  } 
 
-}
+  get questionList(): QuestionAnswer[] {
+    return this.questionsRepository.getQuestionAnswer(this.item._id);        
+  }
+
+  deleteItem(id: string){
+    if(confirm("Are you sure do you want to delete?")) {
+      this.router.navigateByUrl("/question/delete/" + id + "/" + this.item._id);
+    }
+  }
     
 }

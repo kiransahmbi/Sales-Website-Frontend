@@ -24,7 +24,7 @@ export class add_updateComponent {
 
         // Delete
         if (activeRoute.snapshot.params["mode"] == "delete") {
-            this.deleteItem(activeRoute.snapshot.params["id"]);
+            this.deleteItem(activeRoute.snapshot.params["id"], activeRoute.snapshot.params["advertisement"]);
         }
 
         // Edit
@@ -39,20 +39,19 @@ export class add_updateComponent {
             this.action = "add";
             this.title = "Ask a Question";
             this.item = new QuestionAnswer();
+            this.item._id = "";
         }
-
         this.item.AdvertisementID = activeRoute.snapshot.params["advertisement"];
     }
 
     save(form: NgForm) {
-        console.log(this.item);
         this.repository.saveQuestionAnswer(this.item);
-        //this.router.navigateByUrl("/advertisement/"+this.advertisement);                
+        this.router.navigateByUrl("/advertisement/"+this.item.AdvertisementID);                
     }
 
-    private deleteItem(id: string){
+    private deleteItem(id: string, AdvertisementID:string){
         this.repository.deleteQuestionAnswer(id);
-        this.router.navigateByUrl("/advertisement/"+this.advertisement);
+        this.router.navigateByUrl("/advertisement/" + AdvertisementID);
     }
     
 }

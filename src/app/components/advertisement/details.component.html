@@ -36,54 +36,39 @@
                         <td>Condition</td>
                         <td>{{item.Condition}}</td>
                     </tr>
-                    <tr>
-                        <td>Advertisement Start Date</td>
-                        <td>{{ item.DateEnabled.toISOString().split('T')[0] }}</td>
-                    </tr>
-                    <tr>
-                        <td>Advertisement Expiry Date</td>
-                        <td>{{ item.Lifetime.toISOString().split('T')[0] }}</td>
-                    </tr>
+                    
                 </table>
             </div>
         </div>
 
-        
         <section class="questionsAndAnswers">
             <div class="text-center my-3">
                 <h1 class="page-title my-4 text-center">Have a question?</h1>
-                <a href="/question/add/Advertisement._id"><button type="button" class="btn btn-light">Ask!</button></a>
-                <a href="/advertisement/list" class="btn btn-light">
+                <a routerLink="/question/add/{{ item._id }}"><button type="button" class="btn btn-light">Ask!</button></a>
+                <a routerLink="/advertisement/list" class="btn btn-light">
                     <i class="fas fa-undo"></i> 
                     Back
                 </a>
             </div>
-            
             <div class="row">
-             <!--    <% for(let i = 0; i < Questions.length; i++) { %> -->
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <div class="card-header text-center h5"><b>Questions.Question</b></div>
-                       <!--  <% if (Questions[i].Answer) { %>-->
-                            <div class="card-body">
+                    <div *ngFor="let qitem of questionList" class="card mb-4 box-shadow">
+                        <div class="card-header text-center h5"><b> {{ qitem.Question }}</b></div>
+                            <div *ngIf="qitem.Answer" class="card-body">
                                 <p class="card-text">
-                                    Questions.Answer
+                                    {{ qitem.Answer }}
                                 </p>
                             </div>
-                       <!-- <% } %>-->
                         <div class="card-footer text-muted">
                             <div class="d-flex align-items-center btn-group">
-                                <a href="/question/edit/Questions._id/<Advertisement._id" class="btn btn-sm">
+                                <a routerLink="/question/edit/{{ qitem._id }}/{{ item._id }}" class="btn btn-sm">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <a href="/question/delete/Questions[i]._id/Advertisement._id" class="btn btn-sm">
+                                <a (click)="deleteItem(qitem._id)" class="btn btn-sm">
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
-               <!-- <% } %> -->
             </div>
         </section>
 
