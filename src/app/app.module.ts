@@ -39,6 +39,7 @@ import { add_updateComponent } from './components/question/add_update.component'
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
+      { path: "advertisement/list", component: advertisementComponent },
       { path: "advertisement/details", component: detailsComponent },
       { path: "advertisement/advertisement", component: advertisementComponent },
       { path: "partials/partials", component: HeaderComponent },

@@ -82,10 +82,7 @@ export class add_editComponent {
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         }
 
-        //Add
-        else{
-            this.item = new Advertisement();
-        }
+
 
     }
 
