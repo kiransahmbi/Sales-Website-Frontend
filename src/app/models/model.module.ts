@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AdvertisementRepository } from "./advertisement.repository";
+import { QuestionAnswerRepository } from "./questionAnswer.repository";
 import { RestDataSource } from "./rest.datasource";
 import { AuthService } from "./auth.service";
 
@@ -9,6 +10,7 @@ import { AuthService } from "./auth.service";
     imports: [HttpClientModule],
     providers: [
         AdvertisementRepository,
+        QuestionAnswerRepository,
         RestDataSource,
         AuthService     
     ]

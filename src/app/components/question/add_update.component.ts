@@ -5,34 +5,39 @@ import { QuestionAnswer } from "../../models/questionAnswer.model";
 import { QuestionAnswerRepository } from "../../models/questionAnswer.repository";
 
 @Component({
-    selector: "add_edit",
+    selector: "add_update",
     templateUrl: "add_update.component.html"
 })
 
 export class add_updateComponent {
   
-    title: string = 'Add a new Item';
-    editing: boolean = false;
+    title: string;
+    action: string;
+    advertisement: string;
     item: QuestionAnswer = new QuestionAnswer();
 
     constructor(private repository: QuestionAnswerRepository,
                 private router: Router,
                 activeRoute: ActivatedRoute) 
     { 
+        this.advertisement = activeRoute.snapshot.params["advertisement"];
+
         // Delete
         if (activeRoute.snapshot.params["mode"] == "delete") {
             this.deleteItem(activeRoute.snapshot.params["id"]);
         }
 
-        this.editing = activeRoute.snapshot.params["mode"] == "edit";
-        
         // Edit
-        if (this.editing) {
+        if (activeRoute.snapshot.params["mode"] == "edit") {
+            this.action = "edit";
+            this.title = "Update Answer";
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         }
-
+        
         //Add
-        else{
+        else {
+            this.action = "add";
+            this.title = "Ask a Question";
             this.item = new QuestionAnswer();
         }
 
@@ -40,12 +45,12 @@ export class add_updateComponent {
 
     save(form: NgForm) {
         this.repository.saveQuestionAnswer(this.item);
-        this.router.navigateByUrl("");                
+        this.router.navigateByUrl("/advertisement/"+this.advertisement);                
     }
 
     private deleteItem(id: string){
         this.repository.deleteQuestionAnswer(id);
-        this.router.navigateByUrl("");
+        this.router.navigateByUrl("/advertisement/"+this.advertisement);
     }
     
 }

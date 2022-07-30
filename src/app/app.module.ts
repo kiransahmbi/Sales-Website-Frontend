@@ -12,12 +12,14 @@ import { IndexComponent } from './components/index.component';
 import { AboutusComponent } from './components/advertisement/aboutus.component';
 import { IndexModule } from './components/index.module';
 import { AdvertisementModule } from "./components/advertisement/advertisement.module";
+import { QuestionAnswerModule } from "./components/question/questionAnswer.module";
 import { AuthModule } from './components/auth/auth.module';
 import { AuthGuard } from "./components/auth/auth.guard";
 import { PartialsModule } from './components/partials/partials.module';
 import { HeaderComponent } from './components/partials/header.component';
 import { FooterComponent } from './components/partials/footer.component';
 import { NavbarComponent } from './components/partials/navbar.component';
+import { add_updateComponent } from './components/question/add_update.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { NavbarComponent } from './components/partials/navbar.component';
     BrowserModule,
     IndexModule,
     AdvertisementModule,
+    QuestionAnswerModule,
     AuthModule,
     PartialsModule,
     RouterModule,
@@ -40,7 +43,8 @@ import { NavbarComponent } from './components/partials/navbar.component';
       { path: "partials/partials", component: FooterComponent },
       { path: "partials/partials", component: NavbarComponent  },
       { path: "advertisement/:mode", component: add_editComponent}, //Reinoldo Caceres removed canActivate: [AuthGuard] to test the add_edit route.
-     { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
+      { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
+      { path: "question/:mode/:id/:advertisement", component: add_updateComponent},
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
      { path: "**", redirectTo: "" }
