@@ -37,10 +37,12 @@
                         <td>{{item.Condition}}</td>
                     </tr>
                     <tr>
-                        <td>{{item.DateEnabled}}</td>
+                        <td>Advertisement Start Date</td>
+                        <td>{{ item.DateEnabled.toISOString().split('T')[0] }}</td>
                     </tr>
                     <tr>
-                        <td>{{item.Lifetime}}</td>
+                        <td>Advertisement Expiry Date</td>
+                        <td>{{ item.Lifetime.toISOString().split('T')[0] }}</td>
                     </tr>
                 </table>
             </div>

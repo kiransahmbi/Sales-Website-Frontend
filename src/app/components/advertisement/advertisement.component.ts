@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Advertisement } from "../../models/advertisement.model";
 import { AdvertisementRepository } from "../../models/advertisement.repository";
 
@@ -11,7 +11,7 @@ import { AdvertisementRepository } from "../../models/advertisement.repository";
 export class advertisementComponent {
     title = 'Advertisement List';
     constructor(private repository: AdvertisementRepository,
-        private router: Router) 
+        private router: Router, activeRoute: ActivatedRoute) 
     { }
 
     get AdvertisementList(): Advertisement[] {

@@ -11,16 +11,14 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 
 export class detailsComponent {
-    title:string = 'Add a new Item';
-    editing: boolean = false;
-    item: Advertisement = new Advertisement();
+    title: string = 'Details';
+    item: Advertisement;
     constructor(private repository: AdvertisementRepository,
         private router: Router,
         activeRoute: ActivatedRoute) 
 { 
-
-
     this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
+
 }
     
 }

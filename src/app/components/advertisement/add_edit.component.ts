@@ -70,20 +70,13 @@ export class add_editComponent {
                 private router: Router,
                 activeRoute: ActivatedRoute) 
     { 
-        // Delete
-        if (activeRoute.snapshot.params["mode"] == "delete") {
-            this.deleteItem(activeRoute.snapshot.params["id"]);
-        }
-
         this.editing = activeRoute.snapshot.params["mode"] == "edit";
         
         // Edit
         if (this.editing) {
+            this.title = "Update Item";
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         }
-
-
-
     }
 
     save(form: NgForm) {

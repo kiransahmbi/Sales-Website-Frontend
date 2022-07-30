@@ -8,8 +8,8 @@ export class Advertisement {
         public Price?: string,
         public Category?: string,
         public Condition?:string,
-        public DateEnabled?:Date,
-        public Lifetime?:Date,
+        public DateEnabled?: Date,
+        public Lifetime?: Date,
         public ImageLink?:string,
         public owner?: string
     ){}
