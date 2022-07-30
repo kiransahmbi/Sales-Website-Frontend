@@ -13,7 +13,7 @@
             <div class="row">
                     <div *ngFor="let item of AdvertisementList" class="card mb-4 box-shadow">
                         <div class="card-header text-center h5"><b>{{ item.Brand }} </b>{{ item.ProductName }}</div>
-                        <a routerLink="/advertisement/{{ item._id }}"><img class="card-img-top" src="{{ item.ImageLink }}"></a>
+                        <a routerLink="/advertisement/details/{{ item._id }}"><img class="card-img-top" src="{{ item.ImageLink }}"></a>
                         <div class="card-body">
                             <p class="card-text">
                                 <table class="table table-borderless">

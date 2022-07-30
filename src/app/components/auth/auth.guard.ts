@@ -17,7 +17,7 @@ export class AuthGuard {
     {
         if (!this.auth.authenticated) {
             this.auth.redirectUrl = state.url;
-            this.router.navigateByUrl("/users/signin");
+            this.router.navigateByUrl("/auth/signin");
             return false;
         }
         return true;

@@ -46,12 +46,12 @@ export class add_updateComponent {
 
     save(form: NgForm) {
         this.repository.saveQuestionAnswer(this.item);
-        this.router.navigateByUrl("/advertisement/"+this.item.AdvertisementID);                
+        this.router.navigateByUrl("/advertisement/details/"+this.item.AdvertisementID);                
     }
 
     private deleteItem(id: string, AdvertisementID:string){
         this.repository.deleteQuestionAnswer(id);
-        this.router.navigateByUrl("/advertisement/" + AdvertisementID);
+        this.router.navigateByUrl("/advertisement/details/" + AdvertisementID);
     }
     
 }
