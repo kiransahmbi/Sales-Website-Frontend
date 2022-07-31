@@ -19,7 +19,7 @@ export class RestDataSource {
     auth_token: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = "http://localhost:3000/"; //environment.apiurl;
+        this.baseUrl = environment.apiurl;
         console.log(this.baseUrl);
         // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
