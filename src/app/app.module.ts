@@ -36,8 +36,8 @@ import { add_updateComponent } from './components/question/add_update.component'
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
+      
       { path: "advertisement/list", component: advertisementComponent },
-      // { path: "advertisement/:mode", component: add_editComponent,canActivate: [AuthGuard] },
       { path: "advertisement/details/:id", component: detailsComponent },
       { path: "advertisement/add", component: add_editComponent, canActivate: [AuthGuard]},
       { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
