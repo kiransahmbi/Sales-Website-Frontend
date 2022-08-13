@@ -78,9 +78,17 @@ export class add_editComponent {
             this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
         }
 
+<<<<<<< HEAD
         if (activeRoute.snapshot.params["mode"] == "delete") {
           this.deleteItem(activeRoute.snapshot.params["id"]);
         }
+=======
+        // //Add
+        // else{
+        //     this.item = new Advertisement();
+        // }
+
+>>>>>>> 6fb2085686703af342ef11b43e5229ac8157d112
     }
 
     save(form: NgForm) {

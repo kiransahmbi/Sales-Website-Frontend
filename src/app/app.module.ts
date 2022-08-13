@@ -36,6 +36,7 @@ import { add_updateComponent } from './components/question/add_update.component'
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
+<<<<<<< HEAD
       { path: "advertisement/list", component: advertisementComponent },
       // { path: "advertisement/:mode", component: add_editComponent,canActivate: [AuthGuard] },
       { path: "advertisement/details/:id", component: detailsComponent },
@@ -45,6 +46,16 @@ import { add_updateComponent } from './components/question/add_update.component'
       { path: "question/add/:advertisement", component: add_updateComponent},
       { path: "question/:mode/:id/:advertisement", component: add_updateComponent},
 
+=======
+      { path: "advertisement/details", component: detailsComponent },
+      { path: "advertisement/advertisement", component: advertisementComponent },
+      { path: "partials/partials", component: HeaderComponent },
+      { path: "partials/partials", component: FooterComponent },
+      { path: "partials/partials", component: NavbarComponent  },
+      { path: "advertisement/list", component: advertisementComponent },
+      { path: "advertisement/:mode", component: add_editComponent}, //Reinoldo Caceres removed canActivate: [AuthGuard] to test the add_edit route.
+     { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
+>>>>>>> 6fb2085686703af342ef11b43e5229ac8157d112
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
      { path: "**", redirectTo: "" }
