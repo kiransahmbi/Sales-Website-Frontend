@@ -21,7 +21,7 @@ import { AuthGuard } from "./components/auth/auth.guard";
 import { PartialsModule } from './components/partials/partials.module';
 import { add_updateComponent } from './components/question/add_update.component';
 import { MyListingsComponent } from './components/myAccount/myListings.component';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,8 @@ import { MyListingsComponent } from './components/myAccount/myListings.component
   ],
   imports: [
     BrowserModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule,
     IndexModule,
     FormsModule,
     AdvertisementModule,
