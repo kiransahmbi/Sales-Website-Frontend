@@ -37,9 +37,16 @@ import { add_updateComponent } from './components/question/add_update.component'
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
 <<<<<<< HEAD
+<<<<<<< HEAD
       
 =======
 <<<<<<< HEAD
+>>>>>>> ReinoldoCaceres-master
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> eb3b9200b91210795d9c505587db10a16fab1d80
 >>>>>>> ReinoldoCaceres-master
       { path: "advertisement/list", component: advertisementComponent },
       { path: "advertisement/details/:id", component: detailsComponent },
