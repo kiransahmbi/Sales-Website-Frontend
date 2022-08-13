@@ -11,7 +11,17 @@ export class Advertisement {
         public DateEnabled?: Date,
         public Lifetime?: Date,
         public ImageLink?:string,
-        public owner?: string
+        public owner?: owner
     ){}
 
+}
+
+export class owner {
+
+    constructor(
+        public firstName?: string,
+        public lastName?: string,
+        public email?: string,
+        public username?: string
+    ){}
 }

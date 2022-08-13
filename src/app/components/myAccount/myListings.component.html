@@ -4,17 +4,16 @@
 <main role="main">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading my-4 page-title">Product Listings <a routerLink="/advertisement/add" class="btn border-0"><i class="bi bi-plus-circle-fill fa-3x icon-blue"></i></a></h1>
+            <h1 class="jumbotron-heading my-4 page-title">My Listings</h1>
         </div>
     </section>
 
     <div class="album">
         <div class="container">
             <div class="row">
-                <div *ngFor="let item of AdvertisementList" class="card mb-4 box-shadow">
-                    <a routerLink="/advertisement/details/{{ item._id }}">
+                    <div *ngFor="let item of AdvertisementList" class="card mb-4 box-shadow">
                         <div class="card-header text-center h5"><b>{{ item.Brand }} </b>{{ item.ProductName }}</div>
-                        <img class="card-img-top" src="{{ item.ImageLink }}">
+                        <a routerLink="/advertisement/details/{{ item._id }}"><img class="card-img-top" src="{{ item.ImageLink }}"></a>
                         <div class="card-body">
                             <p class="card-text">
                                 <table class="table table-borderless">
@@ -33,8 +32,17 @@
                                 </table>
                          <!--  </p> -->  
                         </div>
-                    </a>
-                </div>
+                        <div class="card-footer text-muted">
+                            <div class="d-flex align-items-center btn-group">
+                                <a routerLink="/advertisement/edit/{{item._id}}" class="btn btn-sm btn-light">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <a (click)="deleteMethod(item._id)" class="btn btn-sm btn-light">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

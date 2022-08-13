@@ -1,10 +1,12 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-/* You can add global styles to this file, and also import other style files */
 /* LANDING PAGE */
-homepage-container {
-    margin: 0 auto;
-    background-color: cornflowerblue
+.homepage-container {
+    margin: 0 auto 5%;
+}
+
+.container {
+    margin: 0 auto 5%;
 }
 
 .container-fluid{
@@ -61,6 +63,7 @@ homepage-container {
     font-size: 1.2rem;
     font-family: "Poppins", sans-serif;;
     font-weight: 400;
+    color: azure!important;
 }
 
 /* TESTIMONIALS */
@@ -68,10 +71,6 @@ homepage-container {
     margin: 0% auto 5%;
     padding: 0!important;
     width: 21rem !important;
-}
-
-.card-header {
-    /* padding: 0; */
 }
 
 .testimonials-title{
@@ -85,7 +84,7 @@ homepage-container {
 .card-img-top {
     width: 100%;
     margin: 0 auto;
-    text-align: center;
+    /* object-fit: cover!important; */
 }
 
 /* FOOTER */
@@ -110,14 +109,9 @@ footer{
 #footer {
     text-align: center;
     padding: 1%;
-    background-color: white;
-    position:relative;
-    bottom:0;
-
-}
-
-#footer>i{
-    padding: 0.5%;
+    background-color: #FCFCFC;
+    position: fixed;
+    bottom: 0;
 }
 
 /*  */
@@ -136,10 +130,7 @@ i {
     .navbar{
     font-family: 'Poppins', sans-serif;
     padding: 0%;
-    }
-
-  
-    
+    } 
 }
 
 /* ADVERTISEMENT */
@@ -147,6 +138,7 @@ i {
     color: cornflowerblue;
     font-weight: 700;
     font-size: 3.5rem;
+    text-align: center;
 }
 
 .icon-blue {
@@ -155,3 +147,7 @@ i {
     padding: 0;
 }
 
+a {
+    text-decoration: none!important;
+    color: black!important;
+}

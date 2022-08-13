@@ -14,10 +14,12 @@ import { AboutusComponent } from './components/advertisement/aboutus.component';
 import { IndexModule } from './components/index.module';
 import { AdvertisementModule } from "./components/advertisement/advertisement.module";
 import { QuestionAnswerModule } from "./components/question/questionAnswer.module";
+import { MyAccountModule } from "./components/myAccount/MyAccount.module";
 import { AuthModule } from './components/auth/auth.module';
 import { AuthGuard } from "./components/auth/auth.guard";
 import { PartialsModule } from './components/partials/partials.module';
 import { add_updateComponent } from './components/question/add_update.component';
+import { MyListingsComponent } from './components/myAccount/myListings.component';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { add_updateComponent } from './components/question/add_update.component'
     FormsModule,
     AdvertisementModule,
     QuestionAnswerModule,
+    MyAccountModule,
     AuthModule,
     PartialsModule,
     RouterModule,
@@ -47,6 +50,8 @@ import { add_updateComponent } from './components/question/add_update.component'
 
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
+
+      { path: "myaccount/listings", component: MyListingsComponent },
      { path: "**", redirectTo: "" }
     ])
   ],
