@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-2 col-md-8">
-            <h1 class="page-title my-4 text-center">{{editing ? "Edit:" : "Add a new"}} Item</h1>
+            <h1 class="page-title my-4 text-center">{{ title }}</h1>
             <form novalidate #form="ngForm" (ngSubmit)="save(form)">
                 <input type="hidden" name="id" [(ngModel)]="item._id" [ngModelOptions]="{standalone: true}">
                 

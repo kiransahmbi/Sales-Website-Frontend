@@ -62,7 +62,7 @@ export class add_editComponent {
         }
       ];
     
-    title:string = 'Add a new Item';
+    title:string = 'Add a New Item';
     editing: boolean = false;
     item: Advertisement = new Advertisement();
 

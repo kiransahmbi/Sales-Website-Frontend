@@ -5,6 +5,7 @@ import { AdvertisementRepository } from "../../models/advertisement.repository";
 import { QuestionAnswer } from "../../models/questionAnswer.model";
 import { QuestionAnswerRepository } from "../../models/questionAnswer.repository";
 import { Router, ActivatedRoute } from "@angular/router";
+import { AuthService } from 'src/app/models/auth.service';
 
 
 @Component({
@@ -19,8 +20,7 @@ export class detailsComponent {
     lifetime: string;
     constructor(private repository: AdvertisementRepository,
         private questionsRepository: QuestionAnswerRepository,
-        private router: Router,
-        activeRoute: ActivatedRoute) 
+        private router: Router, activeRoute: ActivatedRoute, public auth: AuthService) 
   { 
     this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
     this.dateEnabled = new Date(this.item.DateEnabled).toISOString().split('T')[0];
