@@ -25,5 +25,9 @@ export class MyListingsComponent {
             this.router.navigateByUrl("/advertisement/delete/"+id);
         }
     }
+
+    checkExpired(lifetime: Date) {
+        return new Date(lifetime).getTime() < new Date().getTime();
+    }
     
 }

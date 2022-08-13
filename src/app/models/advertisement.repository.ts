@@ -7,6 +7,7 @@ import { ResponseModel } from "./response.model";
 export class AdvertisementRepository {
 
     private Advertisement: Advertisement[] = [];
+    
 
     constructor(private dataSource: RestDataSource) {
         dataSource.getAdvertisementList().subscribe(data => {
@@ -15,15 +16,15 @@ export class AdvertisementRepository {
     }
 
     getAdvertisement(): Advertisement[] {
-        return this.Advertisement;
+        console.log(this.Advertisement.filter(item => {
+            console.log(new Date(item.Lifetime), new Date(), );
+            return item.Lifetime < new Date();
+        }));
+        return (this.Advertisement.filter(item => new Date(item.Lifetime).getTime() > new Date().getTime()).concat(this.Advertisement.filter(item => new Date(item.Lifetime).getTime() < new Date().getTime())));
     }
 
     getUserAdvertisement(username: string): Advertisement[] {
-        this.Advertisement.filter(item => {
-            console.log("SADFSDFSD", item.owner.username);
-            console.log("sdfdsfsDFSD", username);
-            return item.owner.username === username
-        })
+        this.Advertisement.filter(item => item.owner.username === username)
         return (this.Advertisement.filter(item => item.owner.username === username));
     }
 

@@ -147,6 +147,10 @@ i {
     padding: 0;
 }
 
+.expired {
+    background-color: #eeeeee!important;
+}
+
 a {
     text-decoration: none!important;
     color: black!important;

@@ -15,6 +15,7 @@ export class advertisementComponent {
     { }
 
     get AdvertisementList(): Advertisement[] {
+        console.log(this.repository.getAdvertisement());
         return this.repository.getAdvertisement();        
     }
 
@@ -22,6 +23,10 @@ export class advertisementComponent {
         if(confirm("Are you sure do you want to delete?")) {
             this.router.navigateByUrl("/advertisement/delete/"+id);
         }
+    }
+
+    checkExpired(lifetime: Date) {
+        return new Date(lifetime).getTime() < new Date().getTime();
     }
     
 }
