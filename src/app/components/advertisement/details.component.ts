@@ -15,12 +15,16 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class detailsComponent {
     title: string = 'Details';
     item: Advertisement;
+    dateEnabled: string;
+    lifetime: string;
     constructor(private repository: AdvertisementRepository,
         private questionsRepository: QuestionAnswerRepository,
         private router: Router,
         activeRoute: ActivatedRoute) 
   { 
     this.item = this.repository.getItem(activeRoute.snapshot.params["id"]);
+    this.dateEnabled = new Date(this.item.DateEnabled).toISOString().split('T')[0];
+    this.lifetime = new Date(this.item.Lifetime).toISOString().split('T')[0];
   } 
 
   get questionList(): QuestionAnswer[] {

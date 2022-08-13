@@ -37,14 +37,17 @@ import { add_updateComponent } from './components/question/add_update.component'
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      
+>>>>>>> eb3b9200b91210795d9c505587db10a16fab1d80
       { path: "advertisement/list", component: advertisementComponent },
-      // { path: "advertisement/:mode", component: add_editComponent,canActivate: [AuthGuard] },
       { path: "advertisement/details/:id", component: detailsComponent },
       { path: "advertisement/add", component: add_editComponent, canActivate: [AuthGuard]},
       { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
       
       { path: "question/add/:advertisement", component: add_updateComponent},
-      { path: "question/:mode/:id/:advertisement", component: add_updateComponent},
+      { path: "question/:mode/:id/:advertisement", component: add_updateComponent, canActivate: [AuthGuard]},
 
 =======
       { path: "advertisement/details", component: detailsComponent },
