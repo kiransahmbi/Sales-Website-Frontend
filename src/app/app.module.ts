@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from "@angular/router";
 import { FormsModule } from '@angular/forms';
-
+import { HeaderComponent } from './components/partials/header.component';
+import { NavbarComponent } from './components/partials/navbar.component';
+import { FooterComponent } from './components/partials/footer.component';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/auth/signin.component';
 import { SignUpComponent } from './components/auth/signup.component';
