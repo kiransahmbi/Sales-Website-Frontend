@@ -29,15 +29,6 @@ export class AdvertisementRepository {
         return (this.Advertisement.filter(item => item.owner.username === username));
     }
 
-    getUserAdvertisement(username: string): Advertisement[] {
-        this.Advertisement.filter(item => {
-            console.log("SADFSDFSD", item.owner.username);
-            console.log("sdfdsfsDFSD", username);
-            return item.owner.username === username
-        })
-        return (this.Advertisement.filter(item => item.owner.username === username));
-    }
-
     getItem(id: string): Advertisement {
         return (this.Advertisement.find(item => item._id === id));
     }
