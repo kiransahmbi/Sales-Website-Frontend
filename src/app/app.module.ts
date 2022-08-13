@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from "@angular/router";
 import { FormsModule } from '@angular/forms';
-
+import { HeaderComponent } from './components/partials/header.component';
+import { NavbarComponent } from './components/partials/navbar.component';
+import { FooterComponent } from './components/partials/footer.component';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/auth/signin.component';
 import { SignUpComponent } from './components/auth/signup.component';
@@ -36,39 +38,25 @@ import { add_updateComponent } from './components/question/add_update.component'
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
-<<<<<<< HEAD
-<<<<<<< HEAD
-      
-=======
-<<<<<<< HEAD
->>>>>>> ReinoldoCaceres-master
-=======
-<<<<<<< HEAD
-=======
-      
->>>>>>> eb3b9200b91210795d9c505587db10a16fab1d80
->>>>>>> ReinoldoCaceres-master
+
       { path: "advertisement/list", component: advertisementComponent },
       { path: "advertisement/details/:id", component: detailsComponent },
-      { path: "advertisement/add", component: add_editComponent, canActivate: [AuthGuard]},
+      { path: "advertisement/add", component: add_editComponent, canActivate: [AuthGuard] },
       { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
-      
-      { path: "question/add/:advertisement", component: add_updateComponent},
-      { path: "question/:mode/:id/:advertisement", component: add_updateComponent, canActivate: [AuthGuard]},
 
-=======
+      { path: "question/add/:advertisement", component: add_updateComponent },
+      { path: "question/:mode/:id/:advertisement", component: add_updateComponent, canActivate: [AuthGuard] },
       { path: "advertisement/details", component: detailsComponent },
       { path: "advertisement/advertisement", component: advertisementComponent },
       { path: "partials/partials", component: HeaderComponent },
       { path: "partials/partials", component: FooterComponent },
-      { path: "partials/partials", component: NavbarComponent  },
+      { path: "partials/partials", component: NavbarComponent },
       { path: "advertisement/list", component: advertisementComponent },
-      { path: "advertisement/:mode", component: add_editComponent}, //Reinoldo Caceres removed canActivate: [AuthGuard] to test the add_edit route.
-     { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
->>>>>>> 6fb2085686703af342ef11b43e5229ac8157d112
+      { path: "advertisement/:mode", component: add_editComponent }, //Reinoldo Caceres removed canActivate: [AuthGuard] to test the add_edit route.
+      { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
-     { path: "**", redirectTo: "" }
+      { path: "**", redirectTo: "" }
     ])
   ],
   providers: [
