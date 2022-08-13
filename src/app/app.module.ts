@@ -21,7 +21,7 @@ import { AuthGuard } from "./components/auth/auth.guard";
 import { PartialsModule } from './components/partials/partials.module';
 import { add_updateComponent } from './components/question/add_update.component';
 import { MyListingsComponent } from './components/myAccount/myListings.component';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
   ],
   imports: [
     BrowserModule,
-    OwlDateTimeModule, 
+    OwlDateTimeModule,
     OwlNativeDateTimeModule,
     IndexModule,
     FormsModule,
@@ -42,20 +42,20 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     RouterModule.forRoot([
       { path: "", component: IndexComponent },
       { path: "aboutus", component: AboutusComponent },
-      
+
       { path: "advertisement/list", component: advertisementComponent },
       { path: "advertisement/details/:id", component: detailsComponent },
-      { path: "advertisement/add", component: add_editComponent, canActivate: [AuthGuard]},
+      { path: "advertisement/add", component: add_editComponent, canActivate: [AuthGuard] },
       { path: "advertisement/:mode/:id", component: add_editComponent, canActivate: [AuthGuard] },
-      
-      { path: "question/add/:advertisement", component: add_updateComponent},
-      { path: "question/:mode/:id/:advertisement", component: add_updateComponent, canActivate: [AuthGuard]},
+
+      { path: "question/add/:advertisement", component: add_updateComponent },
+      { path: "question/:mode/:id/:advertisement", component: add_updateComponent, canActivate: [AuthGuard] },
 
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
 
       { path: "myaccount/listings", component: MyListingsComponent },
-     { path: "**", redirectTo: "" }
+      { path: "**", redirectTo: "" }
     ])
   ],
   providers: [
