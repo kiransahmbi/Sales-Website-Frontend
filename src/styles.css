@@ -176,3 +176,19 @@ a {
 .about-us-p2{
     margin-bottom: 10%;
 }
+
+.logo{
+    width: 20%;
+}
+
+.homepage-container{
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 600px) {
+    .logo{
+        width: 50%;
+    }
+    .about-us-p2{
+        margin-bottom: 1%;
+    }
+  }
