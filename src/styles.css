@@ -155,3 +155,24 @@ a {
     text-decoration: none!important;
     color: black!important;
 }
+
+.about-us{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.about-us >img{
+    margin: 5%;
+}
+.about-us-title{
+    margin: 5%;
+}
+
+.about-us-p1{
+    margin: 5%;
+}
+
+.about-us-p2{
+    margin-bottom: 10%;
+}
