@@ -54,7 +54,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angul
       { path: "auth/signin", component: SignInComponent },
       { path: "auth/signup", component: SignUpComponent },
 
-      { path: "myaccount/listings", component: MyListingsComponent },
+      { path: "myaccount/listings", component: MyListingsComponent, canActivate: [AuthGuard] },
       { path: "**", redirectTo: "" }
     ])
   ],
