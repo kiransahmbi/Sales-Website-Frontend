@@ -20,8 +20,10 @@ export class AdvertisementRepository {
         console.log(this.Advertisement.filter(item => {
             console.log(new Date(item.Lifetime), new Date(), );
             return item.Lifetime < new Date();
+
+            
         }));
-        return (this.Advertisement.filter(item => new Date(item.Lifetime).getTime() > new Date().getTime()).concat(this.Advertisement.filter(item => new Date(item.Lifetime).getTime() < new Date().getTime())));
+        return (this.Advertisement.filter(item => new Date(item.Lifetime) > new Date()).concat(this.Advertisement.filter(item => new Date(item.Lifetime) < new Date())));
     }
 
     getUserAdvertisement(username: string): Advertisement[] {
