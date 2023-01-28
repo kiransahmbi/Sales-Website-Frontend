@@ -3,33 +3,31 @@
 <app-navbar></app-navbar>
             
 <main role="main">
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading my-4 page-title">Product Listings <a routerLink="/advertisement/add" class="btn border-0"><i class="bi bi-plus-circle-fill fa-3x icon-blue"></i></a></h1>
-        </div>
-    </section>
-
     <div class="album">
         <div class="container">
+            <section class="jumbotron text-center">
+                    <h1 class="jumbotron-heading my-5 page-title">Product Listings <a routerLink="/advertisement/add" class="btn border-0"><i class="bi bi-plus-circle-fill fa-3x icon-blue"></i></a></h1>
+            </section>
+
             <div class="row">
-                <div *ngFor="let item of AdvertisementList" class="card mb-4 box-shadow" [ngClass]="{'expired' : checkExpired(item.Lifetime) }" data-aos="flip-up" data-aos-duration="800">
+                <div *ngFor="let item of AdvertisementList" class="card mb-4 box-shadow" style="width: 25rem!important;" [ngClass]="{'expired' : checkExpired(item.Lifetime) }" data-aos="flip-up" data-aos-duration="800">
 
                     <a routerLink="/advertisement/details/{{ item._id }}">
                         <div class="card-header text-center h5"><b>{{ item.Brand }} </b>{{ item.ProductName }}</div>
                         <img class="card-img-top" src="{{ item.ImageLink }}">
-                        <div class="card-body">
+                        <div class="card-body pb-0">
                             <p class="card-text">
-                                <table class="table table-borderless">
+                                <table class="table-listing table table-striped my-0">
                                     <tr>
-                                        <td class="h6">Description:</td>
-                                        <td>{{item.Description}}</td>
+                                        <td class="h6"><b>Description</b></td>
+                                        <td class="py-4">{{item.Description}}</td>
                                     </tr>
                                     <tr>
-                                        <td class="h6">Price:</td>
-                                        <td>{{item.Price}}</td>
+                                        <td class="h6"><b>Price</b></td>
+                                        <td>${{item.Price}}</td>
                                     </tr>
                                     <tr>
-                                        <td class="h6">Condition:</td>
+                                        <td class="h6"><b>Condition</b></td>
                                         <td>{{ item.Condition}}</td>
                                     </tr>
                                 </table>

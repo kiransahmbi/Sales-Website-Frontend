@@ -83,9 +83,11 @@
 }
 
 .card-img-top {
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
-    /* object-fit: cover!important; */
+    height: 18rem;
+    object-fit: scale-down;
+    object-position: 50% 0;
 }
 
 /* FOOTER */
@@ -142,6 +144,10 @@ i {
     text-align: center;
 }
 
+.table-listing td {
+    padding: 0.5rem 0.5rem;
+}
+
 .icon-blue {
     color: cornflowerblue;
     font-weight: 900;
@@ -157,27 +163,6 @@ a {
     color: black!important;
 }
 
-.about-us{
-    text-align: center;
-    width: 80%;
-    margin: auto;
-}
-
-.about-us >img{
-    margin: 5%;
-}
-.about-us-title{
-    margin: 5%;
-}
-
-.about-us-p1{
-    margin: 5%;
-}
-
-.about-us-p2{
-    margin-bottom: 10%;
-}
-
 .logo{
     width: 20%;
 }
@@ -185,6 +170,7 @@ a {
 .homepage-container{
     overflow-x: hidden;
 }
+
 @media only screen and (max-width: 600px) {
     .logo{
         width: 50%;
