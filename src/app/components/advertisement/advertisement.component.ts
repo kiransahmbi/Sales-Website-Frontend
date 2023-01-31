@@ -16,7 +16,7 @@ export class advertisementComponent {
     { }
 
     get AdvertisementList(): Advertisement[] {
-        console.log(this.repository.getAdvertisement());
+        //console.log(this.repository.getAdvertisement());
         return this.repository.getAdvertisement();        
     }
 
